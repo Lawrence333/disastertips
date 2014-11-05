@@ -1,0 +1,9 @@
+
+#
+# Project configuration file for
+# Disttips
+#
+
+projectname: Disttips
+vendorid: com.mycompany
+mainmodule: com.mycompany.disttips
