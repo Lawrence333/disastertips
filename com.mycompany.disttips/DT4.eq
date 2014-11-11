@@ -1,17 +1,18 @@
 
 /*
- * Dist2
+ * DT4
  * Created by Eqela Studio 2.0b7.4
  */
 
-public class Dist2: SEScene
+public class DT4 : SEScene
 {
+		
 	SESprite disaster;
 	SESprite main;
 	SESprite title;
 	SESprite info;
 	SESprite tip1;
-	SESprite tiplist;
+	SESprite return1;
     public void initialize(SEResourceCache rsc) {
         base.initialize(rsc);
 		add_entity(SESpriteEntity.for_color(Color.instance("white"), get_scene_width(), get_scene_height()));
@@ -24,22 +25,22 @@ public class Dist2: SEScene
 		rsc.prepare_font("font4","arial bold color=#FFFFFF",20);
 		main = add_sprite_for_text("Main Menu","font1");
 		main.move(0.1*get_scene_width(),0.9*get_scene_height());   
-		title = add_sprite_for_text("Earthquake","font2");
-		title.move(0.41*get_scene_width(),0.1*get_scene_height());
-		info = add_sprite_for_text("About Earthquakes","font3");
-		info.move(0.41*get_scene_width(),0.20*get_scene_height());
-		tip1 = add_sprite_for_text("Earthquakes are caused by shaking the ground. They happen instantly and unpredictably, not to mention they cause tsunamis too.","font4");
+		title = add_sprite_for_text("Man-Made Disasters","font2");
+		title.move(0.34*get_scene_width(),0.1*get_scene_height()); 
+		info = add_sprite_for_text("Tips on Man-Made Disasters","font3");
+		info.move(0.36*get_scene_width(),0.20*get_scene_height());   
+		tip1 = add_sprite_for_text("1. Since most of these disasters are caused by man, raising awareness is needed to prevent these disasters.","font4");
 		tip1.move(0.02*get_scene_width(),0.31*get_scene_height());
-		tip1 = add_sprite_for_text("They can easily destroy any kinds of buildings, which are not earthquake-proof.","font4"); 
+		tip1 = add_sprite_for_text("2. Getting the people aware with the environment can help prevent these disasters from happening again.","font4");
 		tip1.move(0.02*get_scene_width(),0.36*get_scene_height());
-		tip1 = add_sprite_for_text("Earthquakes are measured in magnitudes. The higher the magnitude, the more dangerous the earthquake is.","font4");
+		tip1 = add_sprite_for_text("3. Stage cleanups on pollution to immediately prevent future disasters from happening.","font4");
 		tip1.move(0.02*get_scene_width(),0.41*get_scene_height());
-		tip1 = add_sprite_for_text("They occur without warning and are hard to predict. They can only be measured and somehow forcasted with instruments.","font4");
+		tip1 = add_sprite_for_text("4. Keep updated on any environmental disaster that is about to happen due to illegal activity.","font4");
 		tip1.move(0.02*get_scene_width(),0.46*get_scene_height());
-		tip1 = add_sprite_for_text("Lastly, severe ones with a magnitude of 7 or higher can cause massive damage to any area applicable.","font4");
+		tip1 = add_sprite_for_text("5. Check local media, such as radio and news, to take note of environmental areas that need repairing.","font4");
 		tip1.move(0.02*get_scene_width(),0.51*get_scene_height());
-		tiplist = add_sprite_for_text("Tips for this Disaster","font2");
-		tiplist.move(0.33*get_scene_width(),0.65*get_scene_height());
+		return1 = add_sprite_for_text("Return to Disaster Info","font2");
+		return1.move(0.32*get_scene_width(),0.65*get_scene_height());
 		}
 
 public void on_pointer_press(SEPointerInfo pi)
@@ -48,8 +49,8 @@ public void on_pointer_press(SEPointerInfo pi)
         if(pi.is_inside(0.1*get_scene_width(),0.9*get_scene_height(),0.2*get_scene_width(), 0.99*get_scene_height())) {
         switch_scene(new Distlist());
         }
-		if(pi.is_inside(0.33*get_scene_width(),0.65*get_scene_height(),0.68*get_scene_width(), 0.78*get_scene_height())) {
-        switch_scene(new DT2());
+		if(pi.is_inside(0.32*get_scene_width(),0.65*get_scene_height(),0.68*get_scene_width(), 0.78*get_scene_height())) {
+        switch_scene(new Dist4());
         }
 	}
 public void cleanup() 
